@@ -35,7 +35,7 @@ export const CRYPTO_MODULES: CryptoModule[] = [
     detail: "SHA-256 해시로 파일이 바뀌지 않았는지, 전자서명으로 보낸 사람이 맞는지 확인합니다.",
     owner: "김용현",
     file: "src/lib/crypto/integrity.ts",
-    implemented: false,
+    implemented: true,
   },
 ];
 

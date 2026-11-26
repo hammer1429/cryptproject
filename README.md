@@ -18,7 +18,8 @@
 
 - `/` 소개 화면 (개요, 동작 방식, 기능, 기대 효과)
 - `/team` 팀 소개 (팀원별 역할, 개발 현황)
-- `/send` 파일 보내기 (화면만 있고 비활성)
+- `/send/new` 파일 올리기 (업로드 화면)
+- `/send` 파일 올리기 (업로드 화면)
 
 ## 실행하기
 
@@ -38,7 +39,7 @@ src/
   app/
     page.tsx            소개 화면
     team/page.tsx       팀 소개
-    send/               파일 보내기 (page.tsx, SendClient.tsx)
+    send/               파일 올리기 (page.tsx, new/upload.tsx, new/page.tsx)
     layout.tsx          공통 레이아웃, 전역 스타일 삽입
   components/           Header, Footer, DummyNotice
   lib/

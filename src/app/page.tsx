@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -18,11 +20,11 @@ export default function Home() {
               </h1>
               <p className="lead">
                 파일은 보내는 사람의 브라우저에서 암호화되어 올라갑니다. 받는 사람은 링크를 열고 OTP 코드를
-                입력해야 파일을 받을 수 있고, 받는 순간 서버에서 파일이 지워집니다.
+                입력해야 파일을 받을 수 있고, 지정한 횟수만큼 다운로드하면 파일이 지워집니다.
               </p>
               <div className="hero-actions">
-                <Link href="/send" className="btn btn-bright">
-                  파일 보내기
+                <Link href="/send/new" className="btn btn-bright">
+                  파일 올리기
                 </Link>
                 <Link href="/#flow" className="btn btn-ghost">
                   동작 방식 보기
@@ -50,7 +52,7 @@ export default function Home() {
                 </ol>
               </div>
               <p className="sr-only">
-                파일이 업로드되고, OTP 인증을 거쳐 한 번 전송된 뒤 서버에서 삭제되는 과정을 보여 주는 장면입니다.
+                파일이 업로드되고, OTP 인증을 거쳐 지정한 횟수만큼 전송된 뒤 서버에서 삭제되는 과정을 보여 주는 장면입니다.
               </p>
             </div>
           </div>
@@ -59,7 +61,7 @@ export default function Home() {
         <section className="section" id="flow">
           <div className="wrap">
             <h2>이렇게 전달됩니다</h2>
-            <p className="section-sub">서버는 암호문만 잠시 보관하고, 열람이 끝나면 바로 지웁니다.</p>
+            <p className="section-sub">서버는 암호문만 잠시 보관하고, 지정된 다운로드 횟수를 채우면 지웁니다.</p>
             <ol className="flow">
               <li>
                 <span className="flow-n">1단계</span>
@@ -78,8 +80,8 @@ export default function Home() {
               </li>
               <li className="burn">
                 <span className="flow-n">3단계</span>
-                <h3>받으면 사라집니다</h3>
-                <p>받는 사람의 브라우저에서 복호화하고, 서버에 있던 파일은 전송 직후 삭제됩니다.</p>
+                <h3>횟수를 채우면 사라집니다</h3>
+                <p>받는 사람의 브라우저에서 복호화하고, 설정한 횟수만큼 다운로드하면 파일이 삭제됩니다.</p>
               </li>
             </ol>
           </div>
@@ -111,10 +113,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="feature">
-                <h3>일회성 저장과 완전 파기</h3>
+                <h3>다운로드 횟수 제한과 자동 파기</h3>
                 <div>
                   <p>
-                    업로드된 암호문은 내려받기 전까지 대기합니다. 인증을 통과한 한 번의 요청에만 전송하고, 직후
+                    업로드된 암호문은 내려받기 전까지 대기합니다. 인증된 다운로드가 설정한 횟수에 도달하면
                     메모리와 디스크에서 지웁니다.
                   </p>
                   <p>받는 사람이 열지 않아도 정한 만료 시간(10분, 1시간, 24시간)이 지나면 삭제됩니다.</p>
@@ -135,7 +137,7 @@ export default function Home() {
               </li>
               <li>
                 <h3>링크가 유출돼도 열리지 않음</h3>
-                <p>별도 경로로 전달된 OTP가 없으면 열 수 없고, 한 번 열면 파일이 삭제됩니다.</p>
+                <p>별도 경로로 전달된 OTP가 없으면 열 수 없고, 설정한 다운로드 횟수를 채우면 파일이 삭제됩니다.</p>
               </li>
               <li>
                 <h3>설치 없이 브라우저에서</h3>

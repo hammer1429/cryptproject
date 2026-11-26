@@ -1008,6 +1008,27 @@ a {
   gap: 8px;
 }
 
+.signature-canvas {
+  display: block;
+  width: 100%;
+  height: 260px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.signature-preview {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
 .link-box code {
   flex: 1;
   min-width: 0;
@@ -1110,6 +1131,30 @@ a {
   margin-top: 8px;
   color: var(--muted);
   font-size: 14px;
+}
+
+.custom-expiry {
+  display: flex;
+  align-items: center;
+  max-width: 220px;
+  gap: 10px;
+}
+
+.custom-expiry input {
+  width: 150px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--white);
+  color: var(--ink);
+}
+
+.custom-expiry input:focus {
+  outline: none;
+  border-color: var(--signal);
+  box-shadow: 0 0 0 3px var(--signal-bright);
 }
 
 .gone {
