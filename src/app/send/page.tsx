@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OtpGuard from "@/components/OtpGuard";
 import { formatBytes } from "@/lib/format";
 import { deleteUploadedFile, listUploadedFiles } from "@/lib/uploadStore";
 
@@ -33,6 +34,22 @@ function formatTime(timestamp: number) {
 }
 
 export default function SendPage() {
+  return (
+    <>
+      <Header />
+      <OtpGuard>
+        <FileLobby />
+      </OtpGuard>
+      <Footer />
+    </>
+  );
+}
+
+/**
+ * 파일 목록 화면. OtpGuard 안쪽에서만 그려지므로,
+ * OTP 로그인이 확인된 뒤에야 아래 useEffect(파일 불러오기)가 실행된다.
+ */
+function FileLobby() {
   const router = useRouter();
   const [files, setFiles] = useState<UploadedFile[]>([]);
 
@@ -64,8 +81,6 @@ export default function SendPage() {
   }
 
   return (
-    <>
-      <Header />
       <main className="page-main">
         <div className="wrap">
           <div className="page-narrow">
@@ -124,7 +139,5 @@ export default function SendPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

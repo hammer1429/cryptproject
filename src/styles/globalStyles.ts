@@ -850,6 +850,57 @@ a {
   display: block;
 }
 
+.otp-session-bar {
+  background: var(--signal-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.otp-session-bar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.otp-setup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.otp-setup img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.otp-key {
+  display: inline-block;
+  margin: 6px 0;
+  font-size: 15px;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.otp-input {
+  width: 100%;
+  max-width: 220px;
+  min-height: 52px;
+  padding: 8px 12px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 24px;
+  letter-spacing: 8px;
+  text-align: center;
+  background: var(--white);
+  color: var(--ink);
+}
+
 .panel {
   background: var(--white);
   border: 1px solid var(--line);

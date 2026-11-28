@@ -24,10 +24,10 @@ export const CRYPTO_MODULES: CryptoModule[] = [
   {
     id: "otp",
     title: "OTP 인증",
-    detail: "6자리 코드를 발급하고 검증합니다. 유효 시간은 3분이고, 반복해서 틀리면 파일을 잠급니다.",
+    detail: "OTP 앱(TOTP, 30초마다 바뀌는 6자리)으로 로그인합니다. 5회 틀리면 5분 잠금, 같은 코드 재사용 금지, 로그인은 10분 유지됩니다.",
     owner: "박민지",
     file: "src/lib/crypto/otp.ts",
-    implemented: false,
+    implemented: true,
   },
   {
     id: "integrity",

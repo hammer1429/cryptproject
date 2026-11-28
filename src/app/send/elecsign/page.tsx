@@ -1,11 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ElecSign from "./elecsign";
+import OtpGuard from "@/components/OtpGuard";
 
 export default function ElecSignPage() {
   return (
     <>
       <Header />
+      <OtpGuard>
       <main className="page-main">
         <div className="wrap">
           <div className="page-narrow">
@@ -17,6 +19,7 @@ export default function ElecSignPage() {
           </div>
         </div>
       </main>
+      </OtpGuard>
       <Footer />
     </>
   );
